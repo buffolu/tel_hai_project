@@ -1,0 +1,22 @@
+Attack Success Metrics for Carlos Gonzalez - A Place For Us.stem
+====================================
+
+Source: drums
+  Cosine similarity: 0.0006
+  L1 difference: 0.012789
+
+Source: bass
+  Cosine similarity: 0.0015
+  L1 difference: 0.004367
+
+Source: other
+  Cosine similarity: 0.1428
+  L1 difference: 0.033241
+
+Source: vocals
+  Cosine similarity: 0.2628
+  L1 difference: 0.030205
+
+Signal-to-Noise Ratio (SNR): 38.21 dB
+
+Lower similarity and higher difference indicate more successful attack.

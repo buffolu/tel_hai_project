@@ -1,0 +1,22 @@
+Attack Success Metrics for Angels In Amplifiers - I'm Alright.stem
+====================================
+
+Source: drums
+  Cosine similarity: 0.8845
+  L1 difference: 0.013204
+
+Source: bass
+  Cosine similarity: 0.9843
+  L1 difference: 0.004770
+
+Source: other
+  Cosine similarity: 0.7311
+  L1 difference: 0.031942
+
+Source: vocals
+  Cosine similarity: 0.0384
+  L1 difference: 0.027962
+
+Signal-to-Noise Ratio (SNR): 47.85 dB
+
+Lower similarity and higher difference indicate more successful attack.

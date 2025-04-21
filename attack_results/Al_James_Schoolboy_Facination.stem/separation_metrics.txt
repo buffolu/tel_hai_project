@@ -1,0 +1,22 @@
+Attack Success Metrics for Al_James_Schoolboy_Facination.stem
+====================================
+
+Source: drums
+  Cosine similarity: 0.1969
+  L1 difference: 0.012150
+
+Source: bass
+  Cosine similarity: 0.5247
+  L1 difference: 0.025693
+
+Source: other
+  Cosine similarity: 0.1258
+  L1 difference: 0.033348
+
+Source: vocals
+  Cosine similarity: 0.8294
+  L1 difference: 0.016598
+
+Signal-to-Noise Ratio (SNR): 45.70 dB
+
+Lower similarity and higher difference indicate more successful attack.

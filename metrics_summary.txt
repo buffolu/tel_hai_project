@@ -1,0 +1,46 @@
+METRICS SUMMARY
+==============
+
+Total songs analyzed: 10
+
+Average metrics by source:
+-------------------------
+
+DRUMS:
+  SDR: -0.81 dB (min: -57.13, max: 19.62)
+  SIR: inf dB (min: 20.00, max: inf)
+  SAR: -0.81 dB (min: -57.13, max: 19.62)
+
+BASS:
+  SDR: -11.90 dB (min: -52.42, max: 18.57)
+  SIR: inf dB (min: 20.00, max: inf)
+  SAR: -11.90 dB (min: -52.42, max: 18.57)
+
+VOCALS:
+  SDR: -38.72 dB (min: -63.51, max: 4.75)
+  SIR: inf dB (min: 20.00, max: inf)
+  SAR: -38.72 dB (min: -63.51, max: 4.75)
+
+OTHER:
+  SDR: -7.24 dB (min: -26.50, max: 1.69)
+  SIR: inf dB (min: 20.00, max: inf)
+  SAR: -7.24 dB (min: -26.50, max: 1.69)
+
+AVERAGE:
+  SDR: -14.67 dB (min: -33.47, max: -0.69)
+  SIR: 20.00 dB (min: 20.00, max: 20.00)
+  SAR: -14.67 dB (min: -33.47, max: -0.69)
+
+
+Best and worst songs by average SDR:
+----------------------------------
+
+Top 3 songs:
+  Al_James_Schoolboy_Facination.stem: -0.69 dB
+  AM Contra - Heart Peripheral.stem: -1.65 dB
+  Angels In Amplifiers - I'm Alright.stem: -5.62 dB
+
+Bottom 3 songs:
+  Carlos Gonzalez - A Place For Us.stem: -33.47 dB
+  BKS - Bulldozer.stem: -26.91 dB
+  Ben Carrigan - We'll Talk About It All Tonight.stem: -25.43 dB

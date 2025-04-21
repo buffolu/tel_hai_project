@@ -220,7 +220,7 @@ def calculate_metrics(original_dir, estimated_dir, sources=["drums", "bass", "vo
     return metrics
 
 
-def process_all_songs(results_dir="attack_results1"):
+def process_all_songs(results_dir="attack_results"):
     """
     Process all songs in the results directory and compile metrics.
     

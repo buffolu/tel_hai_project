@@ -1,0 +1,22 @@
+Attack Success Metrics for Buitraker - Revo X.stem
+====================================
+
+Source: drums
+  Cosine similarity: 0.0122
+  L1 difference: 0.002415
+
+Source: bass
+  Cosine similarity: 0.0467
+  L1 difference: 0.006705
+
+Source: other
+  Cosine similarity: -0.7366
+  L1 difference: 0.013896
+
+Source: vocals
+  Cosine similarity: 0.1042
+  L1 difference: 0.011730
+
+Signal-to-Noise Ratio (SNR): 32.09 dB
+
+Lower similarity and higher difference indicate more successful attack.

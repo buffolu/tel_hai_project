@@ -1,0 +1,22 @@
+Attack Success Metrics for BKS - Too Much.stem
+====================================
+
+Source: drums
+  Cosine similarity: 0.8915
+  L1 difference: 0.008024
+
+Source: bass
+  Cosine similarity: 0.9931
+  L1 difference: 0.003213
+
+Source: other
+  Cosine similarity: 0.1091
+  L1 difference: 0.023633
+
+Source: vocals
+  Cosine similarity: -0.0930
+  L1 difference: 0.020193
+
+Signal-to-Noise Ratio (SNR): 46.54 dB
+
+Lower similarity and higher difference indicate more successful attack.

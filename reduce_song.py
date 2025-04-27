@@ -86,7 +86,7 @@ def process_directory(input_dir, output_dir):
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         
         # Trim the file to extract the second 5-second segment
-        success = trim_stem_file(input_path, output_path, start_time=0, duration=15)
+        success = trim_stem_file(input_path, output_path, start_time=0, duration=25)
         if not success:
             print(f"Failed to process {rel_path}")
     

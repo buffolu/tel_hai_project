@@ -10,7 +10,7 @@ import sys
 import subprocess
 from tqdm import tqdm
 
-def trim_stem_file(input_path, output_path, start_time=5, duration=5):
+def trim_stem_file(input_path, output_path, start_time=60, duration=90):
     """
     Trim a .stem.mp4 file to extract the second 5-second segment.
     
@@ -86,7 +86,7 @@ def process_directory(input_dir, output_dir):
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         
         # Trim the file to extract the second 5-second segment
-        success = trim_stem_file(input_path, output_path, start_time=5, duration=5)
+        success = trim_stem_file(input_path, output_path, start_time=60, duration=30)
         if not success:
             print(f"Failed to process {rel_path}")
     

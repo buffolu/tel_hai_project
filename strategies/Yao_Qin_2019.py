@@ -323,7 +323,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='White-box adversarial attack on Demucs v4')
     parser.add_argument('--input_file', type=str, required=True, help='Path to input audio file')
     parser.add_argument('--output_dir', type=str, default='./attack_results', help='Directory to save results')
-    parser.add_argument('--model', type=str, default="htdemucs", help='Demucs model name')
+    parser.add_argument('--model', type=str, default="htdemucs_ft", help='Demucs model name')
     parser.add_argument('--iterations', type=int, default=5000, help='Number of attack iterations')
     parser.add_argument('--epsilon', type=float, default=0.0005, help='L-infinity constraint')
     parser.add_argument('--lr', type=float, default=0.00005, help='Learning rate for optimization')

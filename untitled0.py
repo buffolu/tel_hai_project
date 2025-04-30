@@ -1,15 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Apr 15 13:08:26 2025
+Created on Sun Apr 27 11:03:36 2025
 
 @author: igor
 """
-
-my_list = [[13,2], [1,2], [2,2]]
-element = [1,2]
-
-try:
-    index = my_list.index(element)
-    print(f"Found {element} at index {index}.")
-except ValueError:
-    print(f"{element} is not in the list.")
+p =  [1,3,4,2,1]
+lst = p
+lst.sort()
+print(p)

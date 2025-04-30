@@ -7,7 +7,7 @@ Created on Sat Apr 12 14:38:14 2025
 
 #!/usr/bin/env python3
 """
-Batch processor for running Yao_Qin_2019.py on all audio files in a folder.
+Batch processor for running attack_script.py on all audio files in a folder.
 Usage: python process_folder.py /path/to/songs_test
 """
 
@@ -17,7 +17,7 @@ import subprocess
 import argparse
 from tqdm import tqdm
 
-def process_audio_folder(input_folder, script_path="strategies/Yao_Qin_2019.py", additional_args=None):
+def process_audio_folder(input_folder, script_path="attacking_scripts/attack_script.py", additional_args=None):
     """
     Process all audio files in the given folder using the specified script.
     
@@ -87,9 +87,9 @@ def process_audio_folder(input_folder, script_path="strategies/Yao_Qin_2019.py",
 
 def main():
     # Set up argument parser
-    parser = argparse.ArgumentParser(description="Batch process audio files with Yao_Qin_2019.py")
+    parser = argparse.ArgumentParser(description="Batch process audio files with attack_script.py")
     parser.add_argument("input_folder", help="Folder containing audio files to process")
-    parser.add_argument("--script", default="Yao_Qin_2019.py", help="Path to the processing script")
+    parser.add_argument("--script", default="attack_script.py", help="Path to the processing script")
     parser.add_argument("--extra_args", nargs=argparse.REMAINDER, help="Additional arguments to pass to the script")
     
     # Parse arguments

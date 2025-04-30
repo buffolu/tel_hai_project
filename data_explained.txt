@@ -1,8 +1,0 @@
-attack_results = 
-	after attack results,
-	originals: separation prior to attack
-	estimated: separation after attack
-defended = 
-	songs after attacked and after defence
-attack_separated =
-	separation of defended

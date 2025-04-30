@@ -351,8 +351,8 @@ def main():
     os.makedirs(song_output_dir, exist_ok=True)
     
     # Create subdirectories
-    originals_dir = os.path.join(song_output_dir, "originals")
-    estimated_dir = os.path.join(song_output_dir, "estimated")
+    originals_dir = os.path.join(song_output_dir, "separation_prior_attack")
+    estimated_dir = os.path.join(song_output_dir, "separation_after_attack")
     comparisons_dir = os.path.join(song_output_dir, "comparisons")
     
     os.makedirs(originals_dir, exist_ok=True)

@@ -58,11 +58,11 @@ models = {
 
 # Relative path to the audio file or folder containing audio files.
 # For example, to point to a folder named 'input' in the current directory:
-input_path = os.path.join(".", "attack_results/stage1_final.wav")
+input_path = os.path.join("", "attack_results/stage1_final.wav")
 print(input_path)
 # Relative path to the base output directory where separated sources will be saved.
 # For example, a folder named 'output' in the current directory.
-output_base_folder = os.path.join(".", "output_19")
+output_base_folder = os.path.join("", "output_19")
 
 # Select the Demucs model to use (e.g., "htdemucs", "htdemucs_ft", etc.)
 selected_model = "htdemucs_ft"

@@ -12,7 +12,8 @@ for song in os.listdir(input_root):
         output_dir = os.path.join(output_root, song_name)
 
         # קריאה של הערוצים מתוך הקובץ
-        audio, rate = stempeg.read_stems(song, stem_id=None)
+        song_path=os.path.join(input_root, song)
+        audio, rate = stempeg.read_stems(song_path, stem_id=None)
 
         # יצירת תיקייה אם לא קיימת
         os.makedirs(output_dir, exist_ok=True)

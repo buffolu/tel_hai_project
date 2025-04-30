@@ -9,6 +9,7 @@ import os
 import sys
 import subprocess
 from tqdm import tqdm
+import wave
 
 def trim_stem_file(input_path, output_path, start_time=60, duration=90):
     """
@@ -47,6 +48,60 @@ def trim_stem_file(input_path, output_path, start_time=60, duration=90):
     except Exception as e:
         print(f"Exception while processing {os.path.basename(input_path)}: {e}")
         return False
+
+def trim_wav(input_path: str,
+             start_sec: float = 0.0,
+             end_sec: float = None,
+             output_path: str = None) -> str:
+    """
+    Trim a WAV file without re-encoding.
+
+    :param input_path:  Path to the .wav file.
+    :param start_sec:   Start time in seconds (default=0.0).
+    :param end_sec:     End time in seconds (if None, until EOF).
+    :param output_path: Path for the trimmed file (if None, appends '_trimmed').
+    :return:            The path to the trimmed file.
+    :raises FileNotFoundError: If the input file doesn't exist.
+    :raises ValueError: If end_sec <= start_sec.
+    """
+    if not os.path.isfile(input_path):
+        raise FileNotFoundError(f"No such file: {input_path}")
+    song_dir_name = os.path.dirname(input_path)
+    song_dir_name = os.path.basename(song_dir_name)
+    channel_name = os.path.basename(input_path)
+    if output_path is None:
+        output_path = f"trimmed/{song_dir_name}/{channel_name}"
+
+    # Open input WAV
+    with wave.open(input_path, 'rb') as in_wav:
+        params = in_wav.getparams()
+        framerate = in_wav.getframerate()
+        nframes = in_wav.getnframes()
+
+        # Calculate frames to read
+        start_frame = int(start_sec * framerate)
+        end_frame = int(end_sec * framerate) if end_sec is not None else nframes
+        if end_frame > nframes:
+            end_frame = nframes
+        if end_frame <= start_frame:
+            raise ValueError("end_sec must be greater than start_sec")
+
+        num_frames = end_frame - start_frame
+        in_wav.setpos(start_frame)
+        frames = in_wav.readframes(num_frames)
+
+    # Write to output WAV
+    if not os.path.exists(os.path.dirname(output_path)):
+        os.makedirs(os.path.dirname(output_path))
+    with wave.open(output_path, 'wb') as out_wav:
+        out_wav.setparams(params)
+        out_wav.writeframes(frames)
+
+
+def trim_each_song_channels(song_dir_path, start_sec, end_sec):
+    for channel_name in ["vocals", "drums", "bass", "other","mixture"]:
+        trim_wav(os.path.join(song_dir_path, f"{channel_name}.wav"), start_sec, end_sec)
+
 
 def process_directory(input_dir, output_dir):
     """
@@ -130,13 +185,13 @@ if __name__ == "__main__":
         print("Error: FFmpeg is not installed or not in the system PATH.")
         print("Please install FFmpeg before running this script.")
         sys.exit(1)
-        
+
     # Check if both input and output directories are provided
     if len(sys.argv) != 3:
         print("Usage: python trim_musdb_stems.py input_folder output_folder")
         sys.exit(1)
-    
+
     input_dir = sys.argv[1]
     output_dir = sys.argv[2]
-    
+
     process_directory(input_dir, output_dir)

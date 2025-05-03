@@ -35,7 +35,7 @@ def get_seperated_channels(folder_path: str) -> dict[str, np.ndarray]:
     return sources_files
 
 
-def song_evaluation(song_dir_name, original_sources_path, estimated_sources_path):
+def compare(original_sources_path, estimated_sources_path):
     try:
         if not os.path.exists(original_sources_path) or not os.path.exists(estimated_sources_path):
             raise FileNotFoundError
@@ -52,18 +52,27 @@ def song_evaluation(song_dir_name, original_sources_path, estimated_sources_path
         for idx, name in enumerate(["vocals", "drums", "bass", "other"]):
             sdr_val, sir_val, sar_val, perm = separation.bss_eval_sources(original_sources[name], estimated_sources[name])
 
-            results["SDR"].append({name: sdr_val[idx]})
-            results["SIR"].append({name: sir_val[idx]})
-            results["SAR"].append({name: sar_val[idx]})
-
-        results_saving_path=os.path.join("originals",song_dir_name,"evaluations_scores.json")
-        with open(results_saving_path, "w") as f:
-            json.dump(convert_np_floats_to_python(results), f, indent=4, allow_nan=True)
-
+            results["SDR"].append({name: sdr_val[0]})
+            results["SIR"].append({name: sir_val[0]})
+            results["SAR"].append({name: sar_val[0]})
         return results
     except FileNotFoundError:
         print(f"I couldn't find the music files of the given song. please ensure you have the song directory with the correct name and data as the instructions")
     except Exception as e:
         print(f"An error occurred while evaluating the song: {e}")
 
-song_evaluation("AM_Contra_-_Heart_Peripheral", "../originals/AM_Contra_-_Heart_Peripheral", "../separation_after_attack_and_deface/AM Contra - Heart Peripheral.stem")
+
+def song_evaluation(evaluation_path, original_sources_path, prior_attack_sources_path, after_attack_sources_path, after_defence_sources_path):
+    evaluation_scores = {
+        "demucs_default": compare(original_sources_path,prior_attack_sources_path),
+        "attack_effect_evaluation":  compare(prior_attack_sources_path, after_attack_sources_path),
+        "defence_effect_evaluation": compare(original_sources_path,after_defence_sources_path)
+    }
+    results_saving_path = os.path.join(evaluation_path, "evaluations_scores.json")
+    os.makedirs(os.path.dirname(results_saving_path), exist_ok=True)
+
+    with open(results_saving_path, "w") as f:
+        json.dump(convert_np_floats_to_python(evaluation_scores), f, indent=4, allow_nan=True)
+
+example="../originals/AM_Contra_-_Heart_Peripheral"
+song_evaluation(example, example, example,example,example)

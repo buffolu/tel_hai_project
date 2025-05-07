@@ -1,2 +1,13 @@
 .venv
 .idea
+# Ignore everything in songs/
+songs/*
+
+# But not the original_song folders
+!songs/*/original_song/
+
+# But ignore everything inside original_song folders
+songs/*/original_song/*
+
+# Except the song_name.stem.mp3 file
+!songs/*/original_song/*.stem.mp3

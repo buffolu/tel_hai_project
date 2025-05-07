@@ -4,10 +4,10 @@
 songs/*
 
 # But not the original_song folders
-!songs/*/original_song/
+!songs/*/Al James - Schoolboy Facination/
 
 # But ignore everything inside original_song folders
-songs/*/original_song/*
+songs/*/Al James - Schoolboy Facination/*
 
 # Except the song_name.stem.mp3 file
-!songs/*/original_song/*.stem.mp3
+!songs/*/Al James - Schoolboy Facination/*.stem.mp3

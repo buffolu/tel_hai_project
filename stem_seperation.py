@@ -1,11 +1,11 @@
 import stempeg
 import os
 
-input_root = "./songs"
+input_root = "./trimmed_songs"
 output_root = "./originals"
 stem_names = ['mixture', 'drums', 'bass', 'other', 'vocals']
 
-# go through all songs in the directory
+# go through all trimmed_songs in the directory
 for song in os.listdir(input_root):
     if song.endswith(".stem.mp4"):
         song_name = song.replace(".stem.mp4", "").replace(" ", "_")

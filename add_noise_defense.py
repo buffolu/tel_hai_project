@@ -96,7 +96,7 @@ def process_song_folders(input_dir, output_dir, epsilon):
     
     # Process each song folder
     results = []
-    for song_name in tqdm(song_folders, desc="Processing songs"):
+    for song_name in tqdm(song_folders, desc="Processing trimmed_songs"):
         try:
             # Define input and output paths
             input_path = os.path.join(input_dir, song_name, "perturbed_mixture.wav")
